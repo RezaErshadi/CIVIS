@@ -10,4 +10,3 @@ CIVIS - Tübingen Geophysics
 
    _docs/GeneralInformation
    _docs/LectureStructure
-   _docs/ListOfFigures
