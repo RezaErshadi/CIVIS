@@ -1,0 +1,12 @@
+New Page
+=========
+
+This is the content of the new page.
+
+Section 1
+---------
+This is a subsection.
+
+Section 2
+---------
+Another subsection.
