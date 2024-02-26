@@ -1,0 +1,53 @@
+\documentclass[convert]{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{upgreek}
+
+
+\begin{document}
+\definecolor{unired}{RGB}{164, 26, 54} 
+% \nopagecolor 
+\pagecolor{black} % change to nopagecolor later
+\begin{tikzpicture}
+%% Define indices and incident angle
+    % Refractive indices (can be changed)
+    \def\ni{1.0} % Assume air
+    \def\nii{1.5} % Example: glass
+
+    % Incident angle (can be changed)
+    \pgfmathsetmacro{\incidentangle}{35}
+    
+%% Use Snell's Law
+    % Calculate refracted angle
+    \pgfmathsetmacro{\refractedangle}{asin((\ni / \nii )* sin(\incidentangle))}
+
+%% Draw figure
+
+    % Interface
+    \draw[color=unired, line width = 0.7pt] (-4,0) node[below right]{$\text{n}_{ii}$}  node [above right]{$\text{n}_{i}$} -- (4,0) node[below left] {Interface};
+    
+    % Normal line
+    \draw[unired, dotted, line width = 1.1pt] (0,-3) -- (0,3) node[above right] {Normal};
+ 
+    % Incident ray
+    \draw[-<<, unired, line width=1.1pt] (0,0) -- ({3*cos(90+\incidentangle)},{3*sin(90+\incidentangle)}) node[midway, below left] {Incident Ray};
+    
+    % Reflected ray
+    \draw[->, unired, line width=1.1pt] (0,0) -- ({3*cos(90-\incidentangle)},{3*sin(90-\incidentangle)}) node[midway, below right] {Reflected Ray};
+
+    % Refracted ray
+    \draw[->, unired, line width=1.1pt] (0,0) -- ({3*cos(-90+\refractedangle)},{3*sin(-90+\refractedangle)}) node[midway, right] {Refracted Ray};
+
+    % Incident angle
+   \draw [unired] ({0.8*cos(90+\incidentangle)},{0.8*sin(90+\incidentangle)}) arc (90+\incidentangle:90:0.8) node[midway, above] {$\uptheta_i$};
+    
+    % Reflected angle
+    \draw [unired]({0.8*cos(90-\incidentangle)},{0.8*sin(90-\incidentangle)}) arc (90-\incidentangle:90:0.8) node[midway, above] {$\uptheta_i$};
+  
+    % Refracted angle
+    \draw [unired] ({0.8*cos(-90+\refractedangle)},{0.8*sin(-90+\refractedangle)}) arc (-90+\refractedangle:-90:0.8) node[midway,above right] {$\uptheta_r$};
+\end{tikzpicture}
+
+
+\end{document}

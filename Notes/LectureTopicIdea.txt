@@ -1,0 +1,67 @@
+CIVIS seismic
+
+Application of refraction seismic
+Seismic wave types
+Wave equation
+Huygen’s principle
+Reflection and refraction law (Snell’s law)
+Headwave (refracted waves)
+Raypath and travel times for direct, reflected and refracted waves
+
+Principles of seismic field measurements
+Source
+Receivers
+
+Mapping layers with refraction seismic
+
+
+
+
+———
+1. **Introduction Seismic:**
+	⁃	Active  (Seismics) and passive (Seismology)
+	⁃	Example for seismology: interior structure of the Earth, Earthquake locations and mechanisms
+	⁃	Example for deeper seismic: Traditionally oil & gas but now windplatforms (stability, anchoring)
+	⁃	Application of shallower (ground-water, engineering type of questions ?)
+
+2. **Fundamental Concepts of seismic waves:**
+	⁃	1D Seismic Wave Equation and propagation velocity
+	⁃	Stress and strain (introduićing elastic moduli e.g., Young, Bulk),  (density paradox)
+	⁃	Types of Seismic waves (body waves & surface waves)
+
+3. **Principles of Seismic Field Measurements:**
+	⁃	Seismic energy sources
+	⁃	Detection and recording of seismic waves
+	⁃	Source and Receiver Setup
+	⁃	Data example of a single trace and a shot gather 
+
+	⁃	Raypath geometry
+	⁃	Huygen’s Principle
+	⁃	Reflection and Refraction Laws (Snel’s Law)
+	⁃	Critical refraction
+	⁃	Headwave (Refracted Waves)
+	⁃	Raypath and Travel Times for Direct, Reflected, and Refracted Waves
+
+4. **Application in Mapping:**
+   - Techniques for Mapping Layers with Refraction Seismic
+	hidden layers
+	phantoming
+   - Real-data Examples and Case Studies
+
+
+Prepare expertise for each unit
+
+Google doc
+Overleaf
+pCloud link
+
+
+
+
+
+
+
+
+
+
+

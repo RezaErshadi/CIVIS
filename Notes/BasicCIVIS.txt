@@ -1,0 +1,27 @@
+CIVIC
+	Stockholm 
+		Trans disciplinary master of climate energy and the environment
+	
+	What should I start with?
+	What to give to the HIWIS?
+
+	Strong online component for the lecture
+	Modular teaching contents (videos must not be dependent as less as possible)
+	 Also be used for geophysics lecture
+	
+	Broad view for each unit (seismic) - their very broad applications - large scale applications
+	Overview video for each method - top level application
+
+	TIKZ (latex library for figure)
+	
+Seismic (Refraction) - what are the main contents of general seismic
+	Seismic in anatctica e.g.,
+	Moho, Windpart
+	Maybe interview with people
+	Main application of seismic - 
+		recent modern main applications
+	Excersices should be part of it.
+	1d wave equation
+	maybe check the available online books
+
+	Remind Reinhard for NextCloud 

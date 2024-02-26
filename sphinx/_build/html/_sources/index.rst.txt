@@ -11,3 +11,4 @@ CIVIS - Tübingen Geophysics
    _docs/GeneralInformation
    _docs/LectureStructure
    _docs/ListOfFigures
+   _docs/NewMaterials

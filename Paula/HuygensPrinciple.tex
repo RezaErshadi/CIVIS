@@ -1,0 +1,87 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{calc}
+\usetikzlibrary{decorations.text} % to place text along bent path
+\usetikzlibrary{calc}
+
+\begin{document}
+%define custom arc command defined by the center of the corresponding circle, not the starting point of the arc like the usual arc command
+% angle is defined counterclockwise, with 0° on x-axis (horizontal)
+\def\centerarc[#1](#2)(#3:#4:#5)
+% Syntax: [draw options] (center) (initial angle:final angle:radius)
+    { \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
+    
+%define uni color
+\definecolor{unired}{RGB}{164, 26, 54} 
+% \nopagecolor 
+\pagecolor{black} % change to nopagecolor later
+
+\usetikzlibrary{math}
+\tikzmath{\Xa = 6*cos(-25); \Ya = 6*sin(-25); 
+	      \Xb = 6*cos(-15); \Yb = 6*sin(-15);
+	      \Xc = 6*cos(-5) ; \Yc = 6*sin(-5);
+	      \Xd = 6*cos(5)  ; \Yd = 6*sin(5);
+	      \Xe = 6*cos(15) ; \Ye = 6*sin(15);
+	      \Xf = 6*cos(25) ; \Yf = 6*sin(25);
+	      \Xg = 6*cos(35); \Yg = 6*sin(35);
+	      % X and Y values of secondary sources
+	      % M = slope of line between two nodes
+	      % A = Angle between horizontal (0°) and line
+	      % Small and big angle both needed
+	      % Angle between C and D is 90°
+	      % Not all angles are needed due to symmetry of source points
+	      \Mfg = (\Yg - \Yf) / (\Xg - \Xf);
+	      \Afg = atan(abs(\Mfg));
+	      \Agf = 180 - \Afg ;
+	      \Mef = (\Yf - \Ye) / (\Xf - \Xe);
+	      \Afe = atan(abs(\Mef));
+	      \Aef = 180 - \Afe ;
+	      \Mde = (\Ye - \Yd) / (\Xe - \Xd);
+	      \Aed = atan(abs(\Mde));
+	      \Ade = 180 - \Aed ;
+	      } 
+
+\begin{tikzpicture}[font=\sffamily\small]
+
+% Draw primary source
+\draw (0,0) node[circle, unired, fill=unired,  label={[text=unired]above:Primary Source}](a){};
+
+% Draw the primary wavefront as a circular arc
+% postaction:  raising the font away from the curved path
+  \centerarc[color=unired,thick, postaction={decorate,decoration={raise=1.5ex, text along path,text align= {left, left indent=0.5cm}, text color= unired, text={|\sffamily|Original Wavefront}}}](0,0)(-40:40:6)
+
+
+% Draw arrow pointing in wave direction
+  \draw[color=unired, ultra thick, ->] (2,0) -- (5,0) node[midway, below] {Wave direction};  
+  
+% Draw the secondary sources on the original wavefront
+  \foreach \angle in {-25,-15,...,25} {
+  \filldraw[color=unired] (\angle:6) circle(1.5pt);  }
+  
+% Draw the secondary waves radiating from the secondary sources with \centerarc using calculated angles
+% There is probably an easier way to do this with a \for each loop, but I wasn't able to make it work yet
+\centerarc[color=unired,dashed](\Xa ,\Ya)(-\Agf : \Afg :1.05)
+\centerarc[color=unired,dashed](\Xb ,\Yb)(-\Aef : \Afe :1.05)
+\centerarc[color=unired,dashed](\Xc ,\Yc)(-\Ade :90:1.05)
+\centerarc[color=unired,dashed](\Xd ,\Yd)(-90: \Ade :1.05)
+\centerarc[color=unired,dashed](\Xe ,\Ye)(-\Afe : \Aef :1.05)
+\centerarc[color=unired,dashed](\Xf ,\Yf)(-\Afg : \Agf :1.05)
+
+\draw[color=unired, thick, ->] (4,\Yf ) node[above left]{\parbox{\widthof{another}}{
+    Secondary \\
+    Sources}
+  } -- (5.2,\Yf );
+\draw[color=unired, thick, ->] (4,\Yf ) -- (5.5,\Ye );
+
+  
+% Draw the secondary wavefront as a circular arc
+ \centerarc[color=unired,thick, postaction={decorate,decoration={raise=-2.5ex, text along path,text align={left, left indent=0.5cm}, text color= unired, text={|\sffamily|Secondary Wavefront}}}](0,0)(-33:33:7.05)
+
+% Draw another arrow pointing in wave direction
+  \draw[color=unired, ultra thick, ->] (7.8,0) -- (9,0);  
+
+\end{tikzpicture}
+\end{document}
